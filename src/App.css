@@ -1,0 +1,52 @@
+.card{
+  width: '18rem';
+  margin: 2%;
+  text-align: center;
+  display: block;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.cardtitle{
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* EditContactComponent.css */
+
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.edit-contact-form {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  background-color: #fff;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
