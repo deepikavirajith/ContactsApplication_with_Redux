@@ -3,20 +3,20 @@
     {
       "pname": "Lakshmi Deepika",
       "pemail": "Lakshmi.dodda13@gmail.com",
-      "pnumber": "123456",
-      "id": 8
-    },
-    {
-      "pname": "Lakshmi Deepika",
-      "pemail": "Lakshmi.dodda13@gmail.com",
       "pnumber": "88444777",
-      "id": 9
+      "id": 8
     },
     {
       "pname": "Bhavani",
       "pemail": "Lakshmi.dodda13@gmail.com",
-      "pnumber": "123456",
+      "pnumber": "88444777",
       "id": 10
+    },
+    {
+      "pname": "nani",
+      "pemail": "Lakshmi.dodda13@gmail.com",
+      "pnumber": "88444777",
+      "id": 11
     }
   ]
 }

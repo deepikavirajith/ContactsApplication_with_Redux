@@ -50,3 +50,10 @@
   color: #fff;
   cursor: pointer;
 }
+
+
+body {
+  background-color: rgb(42, 41, 41); /* Black background color */
+  margin: 0; /* Reset default margin to ensure full coverage */
+  padding: 0; /* Reset default padding to ensure full coverage */
+}

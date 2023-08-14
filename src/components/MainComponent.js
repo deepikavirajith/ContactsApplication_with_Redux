@@ -67,26 +67,25 @@ const MainComponent = () => {
 
     return (
         <div className="container">
-            <h1 className="display-3 my-5 text-center">Add Contact</h1>
+            <h1 className="display-4 my-4 text-center">Add Contact</h1>
             <div className="row">
-                <div className="col-sm-8 shadow mx-auto p-5">
+                <div className="col-sm-6 offset-sm-3">
                     <form onSubmit={createData}>
-                        <div className="form-group mb-3">
+                        <div className="form-group">
                             <input className="form-control" type='text' placeholder='Enter Name' name='pname'
                                 value={state.contacts.pname} onChange={handleOnchange} required={true}></input>
                         </div>
-                        <div className="form-group mb-3">
+                        <div className="form-group">
                             <input className="form-control" type='email' placeholder='Enter Email' name='pemail'
                                 value={state.contacts.pemail} onChange={handleOnchange} required={true}></input>
                         </div>
-                        <div className="form-group mb-3">
+                        <div className="form-group">
                             <input className="form-control" type='mobile' placeholder='Enter Number' name='pnumber'
                                 value={state.contacts.pnumber} onChange={handleOnchange} required={true}></input>
                         </div>
-                        <div className="form-group">
-                            <input type="submit" className='btn btn-block btn-dark form-control'
-                                value='Add Contact'></input>
-                        </div>
+                        <button type="submit" className="btn btn-dark btn-block">
+                            Add Contact
+                        </button>
                     </form>
                 </div>
             </div>

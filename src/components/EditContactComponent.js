@@ -18,7 +18,10 @@ const EditContactComponent = () => {
         pemail: '',
         pnumber: '',
         islogged: false
-    })
+    });
+
+    const [isLoading, setIsLoading] = useState(true);
+    const [isSaving, setIsSaving] = useState(false);
 
     useEffect(() => {
         // Fetch the contact details using the provided id
@@ -31,50 +34,67 @@ const EditContactComponent = () => {
                     pnumber: contactData.pnumber,
                     islogged: true
                 });
+                setIsLoading(false);
+                setIsSaving(false);
             })
             .catch(error => {
                 console.log(error);
+                setIsLoading(false);
+
             });
     }, [id]);
 
     const editData = async (e) => {
         e.preventDefault();
-        const response = await axios.put(`http://localhost:3001/data/${id}`, {
-            pname: editcontactstate.pname,
-            pemail: editcontactstate.pemail,
-            pnumber: editcontactstate.pnumber
-        });
-        console.log(response);
-        if (!editcontactstate.pname || !editcontactstate.pemail || !editcontactstate.pnumber) {
-            return toast.warning('Please fill all the fields');
-        } else {
-            dispatch(editContactAction(id, editcontactstate));
-            toast.success('Contact updated', {
-                autoClose: 1000
+        setIsSaving(true);
+        try {
+            const response = await axios.put(`http://localhost:3001/data/${id}`, {
+                pname: editcontactstate.pname,
+                pemail: editcontactstate.pemail,
+                pnumber: editcontactstate.pnumber
             });
-            seteditcontactstate({
-                pname: '',
-                pemail: '',
-                pnumber: '',
-                islogged: true
-            });
-            navigate('/');
+            console.log(response);
+            if (!editcontactstate.pname || !editcontactstate.pemail || !editcontactstate.pnumber) {
+                return toast.warning('Please fill all the fields');
+            } else {
+                toast.success('Contact updated', {
+                    autoClose: 1000
+                });
+                dispatch(editContactAction(id, editcontactstate));
+                seteditcontactstate({
+                    pname: '',
+                    pemail: '',
+                    pnumber: '',
+                    islogged: true
+                });
+                setIsSaving(false);
+                navigate('/');
+            }
         }
-       
+        catch (error) {
+        console.error(error);
+        setIsSaving(false);
+        toast.error('An error occurred. Please try again.');
     }
 
-    const handleOnchange = (e) => {
-        e.preventDefault();
-        seteditcontactstate({
-            ...editcontactstate,
-            [e.target.name]: e.target.value
-        });
-    }
+}
 
-    return (
-        <div className='container'>
-            <div className='row'>
-                <div className='col-sm-8 mx-auto'>
+const handleOnchange = (e) => {
+    e.preventDefault();
+    seteditcontactstate({
+        ...editcontactstate,
+        [e.target.name]: e.target.value
+    });
+}
+
+return (
+    <div className='container'>
+        <h1 className="display-4 my-4 text-center">Edit Contact</h1>
+        <div className='row'>
+            <div className='col-sm-8 mx-auto'>
+                {isLoading ? (
+                    <p>Loading...</p>
+                ) :
                     <form onSubmit={editData}>
                         <div className='form-group mb-3'>
                             <input
@@ -106,14 +126,15 @@ const EditContactComponent = () => {
                                 required='true'
                             />
                         </div>
-                        <button type='submit' className='btn btn-primary'>
-                            Save Changes
+                        <button type='submit' className='btn btn-primary' disabled={isSaving}>
+                            {isSaving ? 'Saving...' : 'Save Changes'}
                         </button>
                     </form>
-                </div>
+                }
             </div>
         </div>
-    );
+    </div>
+);
 }
 
 export default EditContactComponent;
