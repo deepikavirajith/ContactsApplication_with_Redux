@@ -1,25 +1,18 @@
-.card{
-  width: '18rem';
+
+.card {
   margin: 2%;
   text-align: center;
-  display: block;
-  align-items: center;
-  justify-content: flex-end;
+  background-color: rgb(67, 67, 67);
+  color: white;
 }
 
-.cardtitle{
+.cardtitle {
   font-weight: bold;
   text-transform: uppercase;
 }
 
-/* EditContactComponent.css */
 
-.center-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-}
+
 
 .edit-contact-form {
   width: 100%;
@@ -56,4 +49,20 @@ body {
   background-color: rgb(42, 41, 41); /* Black background color */
   margin: 0; /* Reset default margin to ensure full coverage */
   padding: 0; /* Reset default padding to ensure full coverage */
+}
+
+#image{
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.loading{
+  color: white;
+}
+#trash{
+  color: red;
+}
+#edit{
+  color: aqua;
 }

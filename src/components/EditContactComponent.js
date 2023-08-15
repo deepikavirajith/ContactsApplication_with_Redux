@@ -93,7 +93,7 @@ return (
         <div className='row'>
             <div className='col-sm-8 mx-auto'>
                 {isLoading ? (
-                    <p>Loading...</p>
+                    <p className='loading'>Loading...</p>
                 ) :
                     <form onSubmit={editData}>
                         <div className='form-group mb-3'>

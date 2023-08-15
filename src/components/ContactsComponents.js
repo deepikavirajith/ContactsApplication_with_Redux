@@ -1,12 +1,12 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
-import { Card, CardBody, CardTitle, CardSubtitle, CardText, CardFooter } from 'reactstrap';
+import { Card, CardBody, CardTitle, CardSubtitle, CardText, CardFooter, CardImg } from 'reactstrap';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { deleteContactAction } from '../actions/ContactsAction';
 import { toast } from 'react-toastify';
-import EditContactComponent from './EditContactComponent';
+import SearchComponent from './SearchComponent';
 
 
 const ContactsComponents = () => {
@@ -31,23 +31,29 @@ const ContactsComponents = () => {
     if (contacts != null) {
         const renderList = contacts.map(contact =>
             <div className='container'>
-                <div className='row'>
-                    <Card key={contact.id} >
+                <div className='row m-2'>
+                    <Card key={contact.id} className='card'>
+
                         <CardBody>
                             <div className='row'>
-                                <div className='col-md-6'>
+                                <div className='col-md-2'>
+                                    <div className="d-flex justify-content-start">
+                                        <CardImg variant="top" src="avtar.jpg" id='image' />
+                                    </div>
+                                </div>
+                                <div className='col-md-8'>
                                     <CardTitle className='cardtitle'>{contact.pname}</CardTitle>
                                     <CardSubtitle>{contact.pnumber}</CardSubtitle>
                                     <CardText>{contact.pemail}</CardText>
                                 </div>
-                                <div className='col-md-6'>
+                                <div className='col-md-2'>
                                     <div className='d-flex justify-content-end'>
-                                        <button type="button" className="btn btn-danger m-4" onClick={() => deleteContact(contact.id)}>
+                                        <button type="button" className="btn m-4" id='trash' onClick={() => deleteContact(contact.id)}>
                                             <i className="fa fa-trash fa-lg"></i>
                                         </button>
                                         <Link
                                             to={`/edit/${contact.id}`} // Redirect to edit form with contact id as parameter
-                                            className="btn btn-info m-4">
+                                            className="btn m-4" id='edit'>
                                             <i className='fa fa-edit fa-lg'></i>
                                         </Link>
                                     </div>
@@ -59,13 +65,12 @@ const ContactsComponents = () => {
             </div>
         );
 
-
-
-
-
         return (
             <div className='container'>
                 <div className="row mt-4">
+                    <div className='col text-center '>
+                        <SearchComponent />
+                    </div>
                     <div className='col text-center'>
                         <Link to="/main" className='btn btn-dark'>
                             Add Contact
