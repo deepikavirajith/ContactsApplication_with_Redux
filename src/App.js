@@ -7,6 +7,7 @@ import {Routes, Route} from 'react-router-dom';
 import NaviComponent from './components/NaviComponent';
 import { ToastContainer } from 'react-toastify';
 import EditContactComponent from './components/EditContactComponent';
+import SearchComponent from './components/SearchComponent';
 
 
 function App() {

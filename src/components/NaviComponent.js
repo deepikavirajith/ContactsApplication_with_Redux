@@ -3,6 +3,7 @@ import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { addContacts } from "../actions/ContactsAction";
 import ContactsComponents from "./ContactsComponents";
+import SearchComponent from "./SearchComponent";
 
 
 const NaviComponent = () => {
@@ -25,7 +26,7 @@ const NaviComponent = () => {
   return (
     <div className="container">
       <div className="row">
-        <ContactsComponents />
+        <SearchComponent />
       </div>
     </div>
   );
