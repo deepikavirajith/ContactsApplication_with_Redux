@@ -8,7 +8,7 @@ import { deleteContactAction } from '../actions/ContactsAction';
 import { toast } from 'react-toastify';
 import SearchComponent from './SearchComponent';
 
-// eslint-disable-next-line react/no-unsafe
+
 const ContactsComponents = () => {
     const contacts = useSelector((state) => state.contacts.contacts);
     console.log(contacts);
@@ -64,7 +64,7 @@ const ContactsComponents = () => {
                 </div>
             </div>
         );
-// eslint-disable-next-line react/no-unsafe
+
         return (
             <div className='container'>
                 <div className="row mt-4">

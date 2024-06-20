@@ -7,7 +7,7 @@ import SearchComponent from "./SearchComponent";
 
 const NaviComponent = () => {
   const dispatch = useDispatch();
-
+ 
   useEffect(() => {
     axios.get("http://localhost:3001/data")
       .then((response) => {
@@ -18,7 +18,7 @@ const NaviComponent = () => {
       .catch((error) => {
         console.log(error);
       })
-
+       // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   
