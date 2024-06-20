@@ -1,14 +1,8 @@
 {
   "data": [
     {
-      "pname": "Lakshmi Deepika",
-      "pemail": "Lakshmi.dodda13@gmail.com",
-      "pnumber": "88444777",
-      "id": 8
-    },
-    {
       "pname": "Bhavani",
-      "pemail": "Lakshmi.dodda13@gmail.com",
+      "pemail": "Bhavani.Kosuri@gmail.com",
       "pnumber": "123456",
       "id": 10
     },
@@ -35,6 +29,18 @@
       "pemail": "Lakshmi.dodda13@gmail.com",
       "pnumber": "88444777",
       "id": 14
+    },
+    {
+      "pname": "Lakshmi Deepika",
+      "pemail": "Lakshmi.dodda13@gmail.com",
+      "pnumber": "123456",
+      "id": 15
+    },
+    {
+      "pname": "Santhi Virajith",
+      "pemail": "Lakshmi.dodda13@gmail.com",
+      "pnumber": "88444777",
+      "id": 16
     }
   ]
 }

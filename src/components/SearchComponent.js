@@ -5,8 +5,15 @@ import { Link } from 'react-router-dom';
 
 const SearchComponent = () => {
     const contacts = useSelector((state) => state.contacts.contacts);
-    const [searchQuery, setSearchQuery] = useState('');
+    console.log(contacts);
 
+    const [searchQuery, setSearchQuery] = useState('');
+    // Handle the case when contacts is null or not yet fetched
+    if (contacts === null) {
+        return <div>Loading contacts...</div>;
+    }
+
+    console.log(contacts);
     const searchbtn = contacts.filter((contact) => {
         return contact.pname.toLowerCase().includes(searchQuery.toLowerCase());
     });
