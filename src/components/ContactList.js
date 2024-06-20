@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardBody, CardTitle, CardSubtitle, CardText, CardFooter, CardImg } from 'reactstrap';
+import { Card, CardBody, CardTitle, CardSubtitle, CardText, CardImg } from 'reactstrap';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
