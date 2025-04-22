@@ -1,13 +1,7 @@
 {
   "data": [
     {
-      "pname": "Bhavani",
-      "pemail": "Bhavani.Kosuri@gmail.com",
-      "pnumber": "123456",
-      "id": 10
-    },
-    {
-      "pname": "nani",
+      "pname": "Gowtham",
       "pemail": "Lakshmi.dodda13@gmail.com",
       "pnumber": "88444777",
       "id": 11
@@ -17,12 +11,6 @@
       "pemail": "Lakshmi.dodda13@gmail.com",
       "pnumber": "88444777",
       "id": 12
-    },
-    {
-      "pname": "Kanna",
-      "pemail": "Lakshmi.dodda13@gmail.com",
-      "pnumber": "88444777",
-      "id": 13
     },
     {
       "pname": "Santhi",
@@ -41,6 +29,12 @@
       "pemail": "Lakshmi.dodda13@gmail.com",
       "pnumber": "88444777",
       "id": 16
+    },
+    {
+      "pname": "Bhavani Dodda",
+      "pemail": "Lakshmi.dodda13@gmail.com",
+      "pnumber": "12259",
+      "id": 17
     }
   ]
 }
