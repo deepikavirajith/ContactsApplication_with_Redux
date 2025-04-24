@@ -1,11 +1,18 @@
-import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import React, { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import ContactList from './ContactList';
 import { Link } from 'react-router-dom';
+import { getContacts } from '../reducer/ContactSlice';
 
 const SearchComponent = () => {
     const contacts = useSelector((state) => state.contacts.contacts);
     console.log(contacts);
+
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(getContacts());
+    }, [dispatch]);
 
     const [searchQuery, setSearchQuery] = useState('');
     // Handle the case when contacts is null or not yet fetched

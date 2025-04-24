@@ -1,19 +1,13 @@
 {
   "data": [
     {
-      "pname": "Gowtham",
+      "pname": "Sai Gowtham Dodda",
       "pemail": "Lakshmi.dodda13@gmail.com",
       "pnumber": "88444777",
       "id": 11
     },
     {
-      "pname": "Chinni",
-      "pemail": "Lakshmi.dodda13@gmail.com",
-      "pnumber": "88444777",
-      "id": 12
-    },
-    {
-      "pname": "Santhi",
+      "pname": "Santhi Virajith",
       "pemail": "Lakshmi.dodda13@gmail.com",
       "pnumber": "88444777",
       "id": 14
@@ -35,6 +29,18 @@
       "pemail": "Lakshmi.dodda13@gmail.com",
       "pnumber": "12259",
       "id": 17
+    },
+    {
+      "pname": "my hearty",
+      "pemail": "doddadeepika13@gmail.com",
+      "pnumber": "123654789",
+      "id": 18
+    },
+    {
+      "pname": "Bhagavan ",
+      "pemail": "doddadeepika13@gmail.com",
+      "pnumber": "456789",
+      "id": 19
     }
   ]
 }
