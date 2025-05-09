@@ -27,10 +27,12 @@ const EditContactComponent = () => {
     }, [contact]);
 
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
+        setIsSaving(true);
         dispatch(editContacts(editcontactstate));
         toast.success('Contact Updated');
+        setIsSaving(false);
         navigate('/');
     };
 
