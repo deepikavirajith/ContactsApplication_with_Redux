@@ -22,7 +22,7 @@ const SearchComponent = () => {
 
     console.log(contacts);
     const searchbtn = contacts.filter((contact) => {
-        return contact.pname.toLowerCase().includes(searchQuery.toLowerCase());
+        return contact.pname?.toLowerCase().includes(searchQuery.toLowerCase());
     });
 
     const handleSearchInputChange = (event) => {
