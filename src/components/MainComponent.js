@@ -23,14 +23,18 @@ const MainComponent = () => {
 
 
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        if (!state.pname || !state.pemail || !state.pnumber)
-            return toast.warning('Please fill all fields');
-        dispatch(addContacts(state));
+        if (!state.pname || !state.pemail || !state.pnumber) {
+            toast.warning('Please fill all fields');
+            return;
+        }
+        await dispatch(addContacts(state));
         toast.success('Contact Added');
+        setState({ pname: '', pemail: '', pnumber: '' });
         navigate('/');
     };
+
 
 
     return (

@@ -6,33 +6,35 @@ import { getContacts } from '../reducer/ContactSlice';
 
 const SearchComponent = () => {
     const contacts = useSelector((state) => state.contacts.contacts);
-    console.log(contacts);
-
     const dispatch = useDispatch();
+
+    console.log(contacts);
 
     useEffect(() => {
         dispatch(getContacts());
     }, [dispatch]);
 
     const [searchQuery, setSearchQuery] = useState('');
-    // Handle the case when contacts is null or not yet fetched
-    if (contacts === null) {
+
+    // Show loading if contacts are not loaded or not an array
+    if (!Array.isArray(contacts)) {
         return <div>Loading contacts...</div>;
     }
 
-    console.log(contacts);
-    const searchbtn = contacts.filter((contact) => {
-        return contact.pname?.toLowerCase().includes(searchQuery.toLowerCase());
-    });
+
+    // Filter contacts by search
+    const filteredContacts = contacts.filter((contact) =>
+        contact.pname?.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+
+    console.log(filteredContacts);
+     console.log('contacts:', contacts);
+    console.log('searchQuery:', searchQuery);
+    console.log('filteredContacts:', filteredContacts);
 
     const handleSearchInputChange = (event) => {
         setSearchQuery(event.target.value);
     };
-
-    if (contacts === null) {
-        return <div>Loading contacts...</div>;
-    }
-
 
     return (
         <div className='container'>
@@ -54,15 +56,19 @@ const SearchComponent = () => {
                 </div>
             </div>
             <div className='row'>
-                {searchbtn.map((contact) => (
-                    <div key={contact.id}>
-                        <ContactList contact={contact} />
-                    </div>
-                ))}
+                {filteredContacts.length === 0 ? (
+                    <div className="col text-center mt-4">No contacts found.</div>
+                ) : (
+                    filteredContacts.map((contact) => (
+                        <div key={contact.id}>
+                            {/* Try this for debugging: */}
+                            {/* <div>{contact.pname}</div> */}
+                            <ContactList contact={contact} />
+                        </div>
+                    ))
+                )}
             </div>
         </div>
-
-
     );
 }
 
